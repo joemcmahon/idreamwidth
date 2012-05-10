@@ -2,17 +2,16 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1024</int>
-		<string key="IBDocument.SystemVersion">10F569</string>
-		<string key="IBDocument.InterfaceBuilderVersion">788</string>
-		<string key="IBDocument.AppKitVersion">1038.29</string>
+		<string key="IBDocument.SystemVersion">10K549</string>
+		<string key="IBDocument.InterfaceBuilderVersion">851</string>
+		<string key="IBDocument.AppKitVersion">1038.36</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">117</string>
+			<string key="NS.object.0">141</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="12"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -75,7 +74,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBUIViewController" id="677433942">
 						<object class="IBUIView" key="IBUIView" id="742406525">
-							<reference key="NSNextResponder"/>
+							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">274</int>
 							<object class="NSMutableArray" key="NSSubviews">
 								<bool key="EncodedWithXMLCoder">YES</bool>
@@ -339,7 +338,6 @@
 								</object>
 							</object>
 							<string key="NSFrame">{{0, -9}, {320, 478}}</string>
-							<reference key="NSSuperview"/>
 							<object class="NSColor" key="IBUIBackgroundColor">
 								<int key="NSColorSpace">3</int>
 								<bytes key="NSWhite">MQA</bytes>
@@ -351,7 +349,6 @@
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 						<object class="IBUINavigationItem" key="IBUINavigationItem" id="931960133">
-							<reference key="IBUINavigationBar"/>
 							<string key="IBUITitle">Desktop</string>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
@@ -1043,13 +1040,13 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>accounts</string>
 							<string>accountsController</string>
+							<string>createEntry</string>
+							<string>createEntryController</string>
 							<string>drafts</string>
 							<string>draftsController</string>
 							<string>journal</string>
 							<string>journalController</string>
 							<string>navigationController</string>
-							<string>newEntry</string>
-							<string>newEntryController</string>
 							<string>reading</string>
 							<string>readingController</string>
 							<string>settings</string>
@@ -1061,12 +1058,12 @@
 							<string>UIButton</string>
 							<string>AccountsViewController</string>
 							<string>UIButton</string>
+							<string>NewEntryViewController</string>
+							<string>UIButton</string>
 							<string>DraftsViewController</string>
 							<string>UIButton</string>
 							<string>JournalViewController</string>
 							<string>UINavigationController</string>
-							<string>UIButton</string>
-							<string>NewEntryViewController</string>
 							<string>UIButton</string>
 							<string>ReadingViewController</string>
 							<string>UIButton</string>
@@ -1080,13 +1077,13 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>accounts</string>
 							<string>accountsController</string>
+							<string>createEntry</string>
+							<string>createEntryController</string>
 							<string>drafts</string>
 							<string>draftsController</string>
 							<string>journal</string>
 							<string>journalController</string>
 							<string>navigationController</string>
-							<string>newEntry</string>
-							<string>newEntryController</string>
 							<string>reading</string>
 							<string>readingController</string>
 							<string>settings</string>
@@ -1102,6 +1099,14 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">accountsController</string>
 								<string key="candidateClassName">AccountsViewController</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">createEntry</string>
+								<string key="candidateClassName">UIButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">createEntryController</string>
+								<string key="candidateClassName">NewEntryViewController</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">drafts</string>
@@ -1122,14 +1127,6 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">navigationController</string>
 								<string key="candidateClassName">UINavigationController</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">newEntry</string>
-								<string key="candidateClassName">UIButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">newEntryController</string>
-								<string key="candidateClassName">NewEntryViewController</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">reading</string>
@@ -1471,6 +1468,6 @@
 				<string>{57, 57}</string>
 			</object>
 		</object>
-		<string key="IBCocoaTouchPluginVersion">117</string>
+		<string key="IBCocoaTouchPluginVersion">141</string>
 	</data>
 </archive>

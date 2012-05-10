@@ -1026,7 +1026,7 @@
         if ([errmsg isEqualToString:@"Invalid password"]) {
             errorToPrint = [[NSString alloc] initWithFormat:@"%@ for %@", errmsg, acct.username];
         } else {
-            errorToPrint = errmsg;
+            errorToPrint = [errmsg retain];
         }
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" 
@@ -1037,9 +1037,7 @@
         [alert show];
         [alert release];
         
-        if (errorToPrint != errmsg) {
-            [errorToPrint release];
-        }
+        [errorToPrint release];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Server Error" 
                                                         message:@"Check your network settings & try again later"

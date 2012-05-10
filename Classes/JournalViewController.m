@@ -155,20 +155,20 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {    
     iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
     DWPost *post = [appDelegate.journalArray objectAtIndex:indexPath.row];
-    NewEntryViewController *entryControl = appDelegate.newEntryController;
+    NewEntryViewController *entryControl = appDelegate.createEntryController;
     
     if (entryControl != nil) {
-        [appDelegate.newEntryController loadPost:post];
-        [self.navigationController pushViewController:appDelegate.newEntryController animated:YES];
+        [appDelegate.createEntryController loadPost:post];
+        [self.navigationController pushViewController:appDelegate.createEntryController animated:YES];
     } else {
         NewEntryViewController *newEntryVC = [[NewEntryViewController alloc] 
                                               initWithNibName:@"NewEntryViewController"
                                               bundle:[NSBundle mainBundle]];
-        appDelegate.newEntryController = newEntryVC;
+        appDelegate.createEntryController = newEntryVC;
         [newEntryVC release];
         
-        [self.navigationController pushViewController:appDelegate.newEntryController animated:YES];
-        [appDelegate.newEntryController loadPost:post];
+        [self.navigationController pushViewController:appDelegate.createEntryController animated:YES];
+        [appDelegate.createEntryController loadPost:post];
     }
 }
 

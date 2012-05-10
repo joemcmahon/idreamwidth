@@ -38,7 +38,7 @@
 
 @synthesize window;
 @synthesize navigationController;
-@synthesize newEntryController;
+@synthesize createEntryController;
 @synthesize draftsController;
 @synthesize journalController;
 @synthesize accountsController;
@@ -47,7 +47,7 @@
 
 @synthesize dwProtocol;
 
-@synthesize newEntry;
+@synthesize createEntry;
 @synthesize drafts;
 @synthesize journal;
 @synthesize accounts;
@@ -162,17 +162,17 @@
 
 - (IBAction)openNewEntry:(id)sender {
     if ([accountsArray count] > 0) {
-        if (self.newEntryController == nil) {
+        if (self.createEntryController == nil) {
             
             NewEntryViewController *newEntryVC = [[NewEntryViewController alloc] 
                                                   initWithNibName:@"NewEntryViewController"
                                                   bundle:[NSBundle mainBundle]];
-            self.newEntryController = newEntryVC;
+            self.createEntryController = newEntryVC;
             [newEntryVC release];
         } else {
-            [self.newEntryController clear];
+            [self.createEntryController clear];
         }
-        [self.navigationController pushViewController:self.newEntryController animated:YES];
+        [self.navigationController pushViewController:self.createEntryController animated:YES];
     } else {
         [self accountAlert:self];
     }
@@ -499,14 +499,14 @@
 
 - (void)dealloc {
     [navigationController release];
-    [newEntryController release];
+    [createEntryController release];
     [draftsController release];
     [journalController release];
     [accountsController release];
     [readingController release];
     [settingsController release];
     
-    [newEntry release];
+    [createEntry release];
     [drafts release];
     [journal release];
     [accounts release];

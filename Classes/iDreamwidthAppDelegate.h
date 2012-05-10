@@ -42,7 +42,7 @@
 @interface iDreamwidthAppDelegate : NSObject <UIApplicationDelegate, UIAlertViewDelegate> {
     UIWindow *window;
     UINavigationController *navigationController;
-    NewEntryViewController *newEntryController;
+    NewEntryViewController *createEntryController;
     DraftsViewController *draftsController;
     JournalViewController *journalController;
     AccountsViewController *accountsController;
@@ -51,7 +51,7 @@
     
     DWProtocol *dwProtocol;
     
-    UIButton *newEntry;
+    UIButton *createEntry;
     UIButton *drafts;
     UIButton *journal;
     UIButton *accounts;
@@ -119,7 +119,7 @@
 
 @property(nonatomic, retain) IBOutlet UIWindow *window;
 @property(nonatomic, retain) IBOutlet UINavigationController *navigationController;
-@property(nonatomic, retain) IBOutlet NewEntryViewController *newEntryController;
+@property(nonatomic, retain) IBOutlet NewEntryViewController *createEntryController;
 @property(nonatomic, retain) IBOutlet DraftsViewController *draftsController;
 @property(nonatomic, retain) IBOutlet JournalViewController *journalController;
 @property(nonatomic, retain) IBOutlet AccountsViewController *accountsController;
@@ -128,7 +128,7 @@
 
 @property(nonatomic, retain) DWProtocol *dwProtocol;
 
-@property(nonatomic, retain) IBOutlet UIButton *newEntry;
+@property(nonatomic, retain) IBOutlet UIButton *createEntry;
 @property(nonatomic, retain) IBOutlet UIButton *drafts;
 @property(nonatomic, retain) IBOutlet UIButton *journal;
 @property(nonatomic, retain) IBOutlet UIButton *accounts;
