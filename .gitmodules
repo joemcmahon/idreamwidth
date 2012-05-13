@@ -1,3 +1,0 @@
-[submodule "modules/fmdb"]
-	path = modules/fmdb
-	url = https://github.com/ccgus/fmdb.git
