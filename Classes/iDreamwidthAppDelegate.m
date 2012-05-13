@@ -20,7 +20,7 @@
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 //  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 //  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-//  DISCLAIMED. IN NO EVENT SHALL XERXES BOTKIN BE LIABLE FOR ANY
+//  DISCLAIMED. IN NO EVENT SHALL THE CONTRIBUTORS BE LIABLE FOR ANY
 //  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
 //  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
 //  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
@@ -37,9 +37,6 @@
 //#import "DWPendingAuthorization.h"
 
 @class DWPendingAuthorization;
-
-static NSString * const DW_ENDPOINT = @"www.dwdev.andreanall.com";
-static const BOOL DW_SSL = false;
 
 @implementation iDreamwidthAppDelegate
 
@@ -82,6 +79,9 @@ static const BOOL DW_SSL = false;
     NSArray *acctType = [[NSArray alloc] initWithObjects:@"Dreamwidth", nil];
     self.accountsType = acctType;
     [acctType release];
+
+    dwClient = [[DWClient alloc] initWithEndpoint:DW_ENDPOINT ssl:DW_SSL tokenPair:
+                [newConsumerTokenPair() autorelease]];
 
     [self loadData:self];
 

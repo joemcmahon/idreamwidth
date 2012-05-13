@@ -44,4 +44,7 @@
 
 @class DWOTokenPair;
 
-DWOTokenPair *newConsumerTokenPair() NS_RETURNS_RETAINED;
+DWOTokenPair *newConsumerTokenPair();
+
+extern NSString * const DW_ENDPOINT;
+extern const BOOL DW_SSL;

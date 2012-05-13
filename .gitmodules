@@ -1,3 +1,6 @@
 [submodule "modules/fmdb"]
 	path = modules/fmdb
 	url = https://github.com/ccgus/fmdb.git
+[submodule "modules/dreamwidth-client"]
+	path = modules/dreamwidth-client
+	url = https://github.com/dreamwidth/dreamwidth-client-mac.git
