@@ -36,7 +36,10 @@
 #import "AccountsViewController.h"
 #import "ReadingViewController.h"
 #import "SettingsViewController.h"
-#import "DWProtocol.h"
+//#import "DWProtocol.h"
+
+@class DWClient;
+@class iDWButtonGrid;
 
 // App delegate for iDreamwidth
 @interface iDreamwidthAppDelegate : NSObject <UIApplicationDelegate, UIAlertViewDelegate> {
@@ -49,7 +52,10 @@
     ReadingViewController *readingController;
     SettingsViewController *settingsController;
     
-    DWProtocol *dwProtocol;
+    IBOutlet iDWButtonGrid *mainButtonGrid;
+
+    //DWProtocol *dwProtocol;
+    DWClient *dwClient;
     
     UIButton *createEntry;
     UIButton *drafts;
@@ -64,13 +70,7 @@
     NSMutableArray *journalArray;
     NSMutableArray *readingArray;
     NSMutableArray *readingLoadArray;
-    
-    NSArray *moodArray;
-    NSArray *moodNumArray;
-    NSDictionary *moodDict;
-    
-    NSMutableDictionary *userPics;
-    
+
     int readingCount;
 }
 
@@ -126,7 +126,8 @@
 @property(nonatomic, retain) IBOutlet ReadingViewController *readingController;
 @property(nonatomic, retain) IBOutlet SettingsViewController *settingsController;
 
-@property(nonatomic, retain) DWProtocol *dwProtocol;
+@property(nonatomic, readonly) DWClient *dwClient;
+//@property(nonatomic, retain) DWProtocol *dwProtocol;
 
 @property(nonatomic, retain) IBOutlet UIButton *createEntry;
 @property(nonatomic, retain) IBOutlet UIButton *drafts;
@@ -143,12 +144,6 @@
 @property(nonatomic, retain) NSMutableArray *readingLoadArray;
 
 @property(nonatomic) int readingCount;
-
-@property(nonatomic, retain) NSArray *moodArray;
-@property(nonatomic, retain) NSArray *moodNumArray;
-@property(nonatomic, retain) NSDictionary *moodDict;
-
-@property(nonatomic, retain) NSMutableDictionary *userPics;
 
 @end
 

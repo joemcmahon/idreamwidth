@@ -30,8 +30,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "DWPost.h"
-
 // Controller for the New Entry view
 @interface NewEntryViewController : UIViewController<UITextFieldDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIActionSheetDelegate> {
     IBOutlet UITextField *postAsText;
@@ -88,7 +86,7 @@
     UIActionSheet *actionSheet;
     
     // Relevant info on the post
-    DWPost *post;
+    //DWPost *post;
     int accountNum;
     int postToNum;
     int commentsNum;
@@ -110,7 +108,7 @@
 - (void)clear;
 
 // Loads the post into the view and controller
-- (void)loadPost:(DWPost *)newPost;
+//- (void)loadPost:(DWPost *)newPost;
 
 // Exposes relevant picker
 - (void)showPostAsPicker;
@@ -148,7 +146,7 @@
 @property(nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property(nonatomic) BOOL kbShown;
 
-@property(nonatomic, retain) DWPost *post;
+//@property(nonatomic, retain) DWPost *post;
 
 @property(nonatomic, retain) IBOutlet UIButton *submitButton;
 

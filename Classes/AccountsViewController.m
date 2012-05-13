@@ -30,7 +30,7 @@
 
 #import "AccountsViewController.h"
 
-#import "DWAccount.h"
+//#import "DWAccount.h"
 #import "iDreamwidthAppDelegate.h"
 #import "AccountsCell.h"
 #import "AccountsEditController.h"
@@ -74,10 +74,8 @@
     editor.accountNum = [appDelegate.accountsArray count];
     editor.username.text = @"";
     editor.password.text = @"";
-    editor.accountTypeNum = 0;
     editor.newSave = YES;
     editor.saveButton.hidden = YES;
-    editor.accountType.text = [editor.accountTypeList objectAtIndex:0];
 }
 
 /*
@@ -152,12 +150,12 @@
     
     // Set up the cell...
     iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
-    DWAccount *acct = [appDelegate.accountsArray objectAtIndex:indexPath.row];
+    //DWAccount *acct = [appDelegate.accountsArray objectAtIndex:indexPath.row];
     
-    cell.accountName.text = acct.username;
+    //cell.accountName.text = acct.username;
     
     UIImage *userPic = nil;
-    userPic = [appDelegate.userPics objectForKey:[acct.username lowercaseString]];
+    //userPic = [appDelegate.userPics objectForKey:[acct.username lowercaseString]];
     if (userPic == nil) {
         cell.accountImg.image = [UIImage imageNamed:@"Dw_icon2.png"];
     } else {
@@ -173,7 +171,7 @@
     // [self.navigationController pushViewController:anotherViewController];
     // [anotherViewController release];
     iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
-    DWAccount *acct = [appDelegate.accountsArray objectAtIndex:indexPath.row];
+    //DWAccount *acct = [appDelegate.accountsArray objectAtIndex:indexPath.row];
     
     if (editor == nil) {
         AccountsEditController *editController = [[AccountsEditController alloc] initWithNibName:@"AccountsEditController" bundle:nil];
@@ -189,12 +187,12 @@
     }
     
     editor.accountNum = indexPath.row;
-    editor.username.text = acct.username;
-    editor.password.text = acct.password;
-    editor.accountTypeNum = acct.accountType;
+    //editor.username.text = acct.username;
+    //editor.password.text = acct.password;
+    //editor.accountTypeNum = acct.accountType;
     editor.newSave = NO;
     editor.saveButton.hidden = NO;
-    editor.accountType.text = [editor.accountTypeList objectAtIndex:acct.accountType];
+    //editor.accountType.text = [editor.accountTypeList objectAtIndex:acct.accountType];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

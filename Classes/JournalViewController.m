@@ -32,7 +32,7 @@
 
 #import "EntryCell.h"
 #import "iDreamwidthAppDelegate.h"
-#import "DWPost.h"
+//#import "DWPost.h"
 
 @implementation JournalViewController
 
@@ -131,17 +131,17 @@
     
     // Set up the cell...
     iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
-    DWPost *post = [appDelegate.journalArray objectAtIndex:indexPath.row];
+    //DWPost *post = [appDelegate.journalArray objectAtIndex:indexPath.row];
     
-    cell.title.text = post.subject;
-    cell.author.text = ((DWAccount *)[appDelegate.accountsArray objectAtIndex:post.accountNum]).username;
-    NSString *commTag = [[NSString alloc] initWithFormat:@"@%@", post.community];
-    cell.community.text = commTag;
-    [commTag release];
-    cell.date.text = post.date;
+    //cell.title.text = post.subject;
+    //cell.author.text = ((DWAccount *)[appDelegate.accountsArray objectAtIndex:post.accountNum]).username;
+    //NSString *commTag = [[NSString alloc] initWithFormat:@"@%@", post.community];
+    //cell.community.text = commTag;
+    //[commTag release];
+    //cell.date.text = post.date;
     
     UIImage *userPic = nil;
-    userPic = [appDelegate.userPics objectForKey:[cell.author.text lowercaseString]];
+    //userPic = [appDelegate.userPics objectForKey:[cell.author.text lowercaseString]];
     if (userPic == nil) {
         cell.postImg.image = [UIImage imageNamed:@"Dw_icon2.png"];
     } else {
@@ -154,7 +154,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {    
     iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
-    DWPost *post = [appDelegate.journalArray objectAtIndex:indexPath.row];
+    /*DWPost *post = [appDelegate.journalArray objectAtIndex:indexPath.row];
     NewEntryViewController *entryControl = appDelegate.createEntryController;
     
     if (entryControl != nil) {
@@ -169,7 +169,7 @@
         
         [self.navigationController pushViewController:appDelegate.createEntryController animated:YES];
         [appDelegate.createEntryController loadPost:post];
-    }
+    }*/
 }
 
 

@@ -33,7 +33,7 @@
 #import "EntryCell.h"
 #import "iDreamwidthAppDelegate.h"
 #import "LightPostViewController.h"
-#import "DWPost.h"
+//#import "DWPost.h"
 
 @implementation ReadingViewController
 
@@ -135,17 +135,17 @@
     
     // Set up the cell...
     iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
-    DWPost *post = [appDelegate.readingArray objectAtIndex:indexPath.row];
+    /*DWPost *post = [appDelegate.readingArray objectAtIndex:indexPath.row];
     
     cell.title.text = post.subject;
     cell.author.text = post.author;
     NSString *commTag = [[NSString alloc] initWithFormat:@"@%@", post.community];
     cell.community.text = commTag;
     [commTag release];
-    cell.date.text = post.date;
+    cell.date.text = post.date;*/
     
     UIImage *userPic = nil;
-    userPic = [appDelegate.userPics objectForKey:[cell.author.text lowercaseString]];
+    //userPic = [appDelegate.userPics objectForKey:[cell.author.text lowercaseString]];
     if (userPic == nil) {
         cell.postImg.image = [UIImage imageNamed:@"Dw_icon2.png"];
     } else {
@@ -162,7 +162,7 @@
     // [self.navigationController pushViewController:anotherViewController];
     // [anotherViewController release];
     
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    /*iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
     DWPost *post = [appDelegate.readingArray objectAtIndex:indexPath.row];
     
     if (postView == nil) {
@@ -176,7 +176,7 @@
     [self.navigationController pushViewController:postView animated:YES];
     NSURL *lightPostURL = [NSURL URLWithString:post.url];
     NSURLRequest *request = [NSURLRequest requestWithURL:lightPostURL];
-    [postView.lightPost loadRequest:request];
+    [postView.lightPost loadRequest:request];*/
 }
 
 

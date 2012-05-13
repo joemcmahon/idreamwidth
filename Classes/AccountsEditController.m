@@ -31,7 +31,7 @@
 #import "AccountsEditController.h"
 
 #import "iDreamwidthAppDelegate.h"
-#import "DWAccount.h"
+//#import "DWAccount.h"
 
 
 // Taken from Cocoa With Love 
@@ -80,16 +80,11 @@ __VA_ARGS__ \
 @synthesize accountImg;
 @synthesize username;
 @synthesize password;
-@synthesize accountType;
 @synthesize saveButton;
 @synthesize accountNum;
-@synthesize accountTypeNum;
-@synthesize accountTypeList;
 @synthesize newSave;
 @synthesize scrollView;
 @synthesize kbShown;
-@synthesize typePicker;
-@synthesize actionSheet;
 
  // The designated initializer.  Override if you create the controller programmatically 
  // and want to perform customization that is not appropriate for viewDidLoad.
@@ -97,8 +92,7 @@ __VA_ARGS__ \
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
         iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
-        
-        self.accountTypeList = appDelegate.accountsType;
+
         newSave = YES;
         saveButton.hidden = YES;
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave 
@@ -130,7 +124,7 @@ __VA_ARGS__ \
 - (void)save:(id)sender {
     iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    if (newSave) {
+    /*if (newSave) {
         DWAccount *newAccount = [[DWAccount alloc] initWithUsername:username.text 
                                                        withPassword:password.text 
                                                            withType:accountTypeNum];
@@ -141,7 +135,7 @@ __VA_ARGS__ \
         account.username = username.text;
         account.password = password.text;
         account.accountType = accountTypeNum;
-    }
+    }*/
     
     [appDelegate updateAccounts:self];
     
@@ -172,11 +166,7 @@ __VA_ARGS__ \
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    currTextField = textField;
-    
-    if (textField == accountType) {
-        [self showTypePicker];
-    }
+
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -263,72 +253,6 @@ __VA_ARGS__ \
     kbShown = NO;
 }
 
-- (void)showTypePicker {
-    typeShown = YES;
-    
-    UIActionSheet *aSheet = [[UIActionSheet alloc] initWithTitle:@"Account Type"
-                                                        delegate:nil 
-                                               cancelButtonTitle:nil
-                                          destructiveButtonTitle:nil
-                                               otherButtonTitles:nil];
-    [aSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
-    CGRect pickerFrame = CGRectMake(0, 40, 0, 0);
-    
-    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:pickerFrame];
-    pickerView.showsSelectionIndicator = YES;
-    pickerView.dataSource = self;
-    pickerView.delegate = self;
-    
-    [aSheet addSubview:pickerView];
-    [pickerView release];
-    
-    UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"Close"]];
-    closeButton.momentary = YES; 
-    closeButton.frame = CGRectMake(260, 7.0f, 50.0f, 30.0f);
-    closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
-    closeButton.tintColor = [UIColor blackColor];
-    [closeButton addTarget:self action:@selector(dismissPicker:) forControlEvents:UIControlEventValueChanged];
-    [aSheet addSubview:closeButton];
-    [closeButton release];
-    
-    [aSheet showInView:self.view];
-    
-    [aSheet setBounds:CGRectMake(0, 0, 320, 485)];
-    
-    [pickerView selectRow:self.accountTypeNum inComponent:0 animated:NO];
-    
-    self.typePicker = pickerView;
-    self.actionSheet = aSheet;
-}
-
-- (void)dismissPicker:(id)sender {
-    if (typeShown) {
-        [actionSheet dismissWithClickedButtonIndex:-1 animated:YES];
-        NSInteger n = [typePicker selectedRowInComponent:0];
-        self.accountType.text = [accountTypeList objectAtIndex:n];
-        [accountType resignFirstResponder];
-        currTextField = nil;
-        accountTypeNum = n;
-        typeShown = NO;
-    }
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return (NSString *)[accountTypeList objectAtIndex:row];
-}
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    if (typeShown) {
-        return [accountTypeList count];
-    } else {
-        return 0;
-    }
-}
-
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
@@ -349,11 +273,8 @@ __VA_ARGS__ \
     [accountImg release];
     [username release];
     [password release];
-    [accountType release];
     [saveButton release];
-    [accountTypeList release];
-    [typePicker release];
-    [actionSheet release];
+
     [self.navigationItem.rightBarButtonItem release];
     [self.navigationItem.leftBarButtonItem release];
     

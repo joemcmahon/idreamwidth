@@ -1,8 +1,8 @@
 //
-//  ChallengeRequest.m
+//  Configuration.h
 //  iDreamwidth
 //
-//  Copyright (c) 2010, Xerxes Botkin
+//  Copyright (c) 2012, Dreamwidth Studios, LLC.
 //  All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -19,7 +19,7 @@
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 //  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 //  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-//  DISCLAIMED. IN NO EVENT SHALL XERXES BOTKIN BE LIABLE FOR ANY
+//  DISCLAIMED. IN NO EVENT SHALL Dreamwidth Studios, LLC. BE LIABLE FOR ANY
 //  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
 //  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
 //  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
@@ -27,33 +27,21 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
+// Authors:
+//  Andrea Nall <anall@andreanall.com>
 
-#import "ChallengeRequest.h"
+#ifndef __has_feature      // Optional.
+#define __has_feature(x) 0 // Compatibility with non-clang compilers.
+#endif
 
+#ifndef NS_RETURNS_RETAINED
+#if __has_feature(attribute_ns_returns_retained)
+#define NS_RETURNS_RETAINED __attribute__((ns_returns_retained))
+#else
+#define NS_RETURNS_RETAINED
+#endif
+#endif
 
-@implementation ChallengeRequest
+@class DWOTokenPair;
 
-@synthesize request;
-
-- (id)init {
-    if (self = [super init]) {
-        request = nil;
-    }
-    
-    return self;
-}
-
-- (id)initWithRequest:(ASIFormDataRequest *)req {
-    if (self = [super init]) {
-        self.request = req;
-    }
-        
-    return self;
-}
-
-- (void)dealloc {
-    [request release];
-    [super dealloc];
-}
-
-@end
+DWOTokenPair *newConsumerTokenPair() NS_RETURNS_RETAINED;

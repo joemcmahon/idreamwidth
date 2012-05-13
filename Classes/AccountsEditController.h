@@ -32,19 +32,12 @@
 
 // AccountsEditController is the controller for the view seen when a user is
 // editing an account
-@interface AccountsEditController : UIViewController<UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
+@interface AccountsEditController : UIViewController<UITextFieldDelegate> {
     IBOutlet UIImageView *accountImg;
     IBOutlet UITextField *username;
     IBOutlet UITextField *password;
-    IBOutlet UITextField *accountType;
     
     int accountNum; // corresponds to position of account in App Delegate's accounts array
-    
-    // Used for keeping track of account type picker
-    UIPickerView *typePicker;
-    NSArray *accountTypeList;
-    bool typeShown;
-    int accountTypeNum; // 0 = Dreamwidth; 1 = LiveJournal (planned, not active)
     
     IBOutlet UIButton *saveButton;
     BOOL newSave;
@@ -52,7 +45,7 @@
     // Used for moving to selected text field
     IBOutlet UIScrollView *scrollView;
     UITextField *currTextField; // ptr to current text field being edited
-    UIActionSheet *actionSheet;
+
     BOOL kbShown;
 }
 
@@ -68,14 +61,12 @@
 @property(nonatomic, retain) IBOutlet UIImageView *accountImg;
 @property(nonatomic, retain) IBOutlet UITextField *username;
 @property(nonatomic, retain) IBOutlet UITextField *password;
-@property(nonatomic, retain) IBOutlet UITextField *accountType;
+
 @property(nonatomic, retain) IBOutlet UIButton *saveButton;
 @property(nonatomic, retain) IBOutlet UIScrollView *scrollView;
-@property(nonatomic, retain) UIPickerView *typePicker;
-@property(nonatomic, retain) UIActionSheet *actionSheet;
-@property(nonatomic, retain) NSArray *accountTypeList;
+
 @property(nonatomic) int accountNum;
-@property(nonatomic) int accountTypeNum;
+
 @property(nonatomic) BOOL newSave;
 @property(nonatomic) BOOL kbShown;
 

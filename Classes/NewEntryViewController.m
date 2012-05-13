@@ -31,7 +31,7 @@
 #import "NewEntryViewController.h"
 
 #import "iDreamwidthAppDelegate.h"
-#import "DWAccount.h"
+//#import "DWAccount.h"
 
 // Taken from Cocoa With Love 
 // (http://cocoawithlove.com/2010/07/tips-tricks-for-conditional-ios3-ios32.html)
@@ -101,7 +101,7 @@
 @synthesize scrollView;
 @synthesize kbShown;
 
-@synthesize post;
+//@synthesize post;
 
 @synthesize submitButton;
 
@@ -118,24 +118,24 @@
 
 - (IBAction)submit {
     iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
-    DWAccount *account = (DWAccount *)[appDelegate.accountsArray objectAtIndex:accountNum];
+    //DWAccount *account = (DWAccount *)[appDelegate.accountsArray objectAtIndex:accountNum];
     
     [self save:self];
-    [appDelegate.dwProtocol postEvent:account withPost:self.post];
+    //[appDelegate.dwProtocol postEvent:account withPost:self.post];
 }
 
 - (void)clear {
     iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
-    DWAccount *account = (DWAccount *)[appDelegate.accountsArray objectAtIndex:0];
+    //DWAccount *account = (DWAccount *)[appDelegate.accountsArray objectAtIndex:0];
     
     accountNum = 0;
     postToNum = 0;
-    self.postAsText.text = account.username;
-    self.postToText.text = [account.postToArray objectAtIndex:0];
+    //self.postAsText.text = account.username;
+    //self.postToText.text = [account.postToArray objectAtIndex:0];
     self.subjectText.text = @"";
     self.entryView.text = @"";
     self.tagsText.text = @"";
-    self.moodSelText.text = [appDelegate.moodArray objectAtIndex:0];
+    //self.moodSelText.text = [appDelegate.moodArray objectAtIndex:0];
     self.moodText.text = @"";
     self.locationText.text = @"";
     self.musicText.text = @"";
@@ -143,13 +143,13 @@
     self.screenText.text = [screenArray objectAtIndex:0];
     self.ageRestrictText.text = [ageRestrictArray objectAtIndex:0];
     
-    DWPost *newPost = [[DWPost alloc] init];
-    self.post = newPost;
-    [newPost release];
+    //DWPost *newPost = [[DWPost alloc] init];
+    //self.post = newPost;
+    //[newPost release];
 }
 
 - (void)finalizeChanges {
-    self.post.subject = self.subjectText.text;
+    /*self.post.subject = self.subjectText.text;
     self.post.body = self.entryView.text;
     self.post.location = self.locationText.text;
     self.post.mood = self.moodText.text;
@@ -164,14 +164,14 @@
     self.post.privatePost = accessSel;
     
     self.post.accountNum = accountNum;
-    self.post.communityNum = postToNum;
+    self.post.communityNum = postToNum;*/
 }
 
 - (void)save:(id)sender {
     iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     // Edit this
-    if (self.post.draftNum == -1) {
+    /*if (self.post.draftNum == -1) {
         // New save
         [self finalizeChanges];
         self.post.draftNum = [appDelegate.draftsArray count];
@@ -187,10 +187,10 @@
         [currTextField resignFirstResponder];
         currTextField = nil;
     }
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];*/
 }
 
-- (void)loadPost:(DWPost *)newPost {
+/*- (void)loadPost:(DWPost *)newPost {
     iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
     self.post = newPost;
     
@@ -217,7 +217,7 @@
     } else if (accessSel == YES) {
         self.accessText.text = [accessArray objectAtIndex:1];
     }
-}
+}*/
 
 - (void)cancel:(id)sender {
     if (currTextField != nil) {
@@ -298,9 +298,9 @@
                                                                                           action:@selector(cancel:)];
     self.navigationItem.title = @"New Entry";
     
-    DWPost *dwPost = [[DWPost alloc] init];
-    self.post = dwPost;
-    [dwPost release];
+    //DWPost *dwPost = [[DWPost alloc] init];
+    //self.post = dwPost;
+    //[dwPost release];
     commentsArray = [[NSArray alloc] initWithObjects:@"Journal Default", @"Disabled", 
                         @"Don't Email", nil];
     screenArray = [[NSArray alloc] initWithObjects:@"Journal Default", @"Disabled",
@@ -312,14 +312,14 @@
     postToNum = 0;
     accessSel = NO;
     iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
-    DWAccount *account = (DWAccount *)[appDelegate.accountsArray objectAtIndex:accountNum];
+    //DWAccount *account = (DWAccount *)[appDelegate.accountsArray objectAtIndex:accountNum];
     
-    self.postAsText.text = account.username;
-    self.postToText.text = [account.postToArray objectAtIndex:0];
+    //self.postAsText.text = account.username;
+    //self.postToText.text = [account.postToArray objectAtIndex:0];
     self.subjectText.text = @"";
     self.entryView.text = @"";
     self.tagsText.text = @"";
-    self.moodSelText.text = [appDelegate.moodArray objectAtIndex:0];
+    //self.moodSelText.text = [appDelegate.moodArray objectAtIndex:0];
     self.moodText.text = @"";
     self.locationText.text = @"";
     self.musicText.text = @"";
@@ -558,7 +558,7 @@
     
     [aSheet setBounds:CGRectMake(0, 0, 320, 485)];
     
-    [pickerView selectRow:self.post.comments inComponent:0 animated:NO];
+    //[pickerView selectRow:self.post.comments inComponent:0 animated:NO];
     
     self.commentsPick = pickerView;
     self.actionSheet = aSheet;
@@ -596,7 +596,7 @@
     
     [aSheet setBounds:CGRectMake(0, 0, 320, 485)];
     
-    [pickerView selectRow:self.post.screen inComponent:0 animated:NO];
+    //[pickerView selectRow:self.post.screen inComponent:0 animated:NO];
     
     self.screenPick = pickerView;
     self.actionSheet = aSheet;
@@ -634,7 +634,7 @@
     
     [aSheet setBounds:CGRectMake(0, 0, 320, 485)];
     
-    [pickerView selectRow:self.post.adultContent inComponent:0 animated:NO];
+    //[pickerView selectRow:self.post.adultContent inComponent:0 animated:NO];
     
     self.ageRestrictPick = pickerView;
     self.actionSheet = aSheet;
@@ -672,7 +672,7 @@
     
     [aSheet setBounds:CGRectMake(0, 0, 320, 485)];
     
-    [pickerView selectRow:self.post.privatePost inComponent:0 animated:NO];
+    //[pickerView selectRow:self.post.privatePost inComponent:0 animated:NO];
     
     self.accessPick = pickerView;
     self.actionSheet = aSheet;
@@ -706,15 +706,15 @@
     } else if (moodShown) {
         [actionSheet dismissWithClickedButtonIndex:-1 animated:YES];
         NSInteger n = [moodPick selectedRowInComponent:0];
-        self.moodSelText.text = [appDelegate.moodArray objectAtIndex:n];
+        //self.moodSelText.text = [appDelegate.moodArray objectAtIndex:n];
         [moodSelText resignFirstResponder];
-        moodNum = [[appDelegate.moodNumArray objectAtIndex:n] intValue];
+        //moodNum = [[appDelegate.moodNumArray objectAtIndex:n] intValue];
         moodShown = NO;
     } else if (postAsShown) {
         [actionSheet dismissWithClickedButtonIndex:-1 animated:YES];
         NSInteger n = [postAsPick selectedRowInComponent:0];
-        DWAccount *account = (DWAccount *)[appDelegate.accountsArray objectAtIndex:n];
-        self.postAsText.text = account.username;
+        //DWAccount *account = (DWAccount *)[appDelegate.accountsArray objectAtIndex:n];
+        //self.postAsText.text = account.username;
         [postAsText resignFirstResponder];
         accountNum = n;
         postAsShown = NO;
@@ -723,8 +723,8 @@
         
         [actionSheet dismissWithClickedButtonIndex:-1 animated:YES];
         NSInteger n = [postToPick selectedRowInComponent:0];
-        DWAccount *account = (DWAccount *)[appDelegate.accountsArray objectAtIndex:accountNum];
-        self.postToText.text = [account.postToArray objectAtIndex:n];
+        //DWAccount *account = (DWAccount *)[appDelegate.accountsArray objectAtIndex:accountNum];
+        //self.postToText.text = [account.postToArray objectAtIndex:n];
         [postToText resignFirstResponder];
         postToNum = n;
         postToShown = NO;
@@ -752,14 +752,14 @@
     } else if (screenShown) {
         return (NSString *)[screenArray objectAtIndex:row];
     } else if (moodShown) {
-        return (NSString *)[appDelegate.moodArray objectAtIndex:row];
+        return @""; //(NSString *)[appDelegate.moodArray objectAtIndex:row];
     } else if (postToShown) {
         iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
-        DWAccount *account = [appDelegate.accountsArray objectAtIndex:accountNum];
-        return (NSString *)[account.postToArray objectAtIndex:row];
+        //DWAccount *account = [appDelegate.accountsArray objectAtIndex:accountNum];
+        return @"";//(NSString *)[account.postToArray objectAtIndex:row];
     } else if (postAsShown) {
         iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
-        return (NSString *)((DWAccount *)[appDelegate.accountsArray objectAtIndex:row]).username;
+        return @""; //(NSString *)((DWAccount *)[appDelegate.accountsArray objectAtIndex:row]).username;
     } else if (accessShown) {
         return (NSString *)[accessArray objectAtIndex:row];
     } else {
@@ -780,14 +780,14 @@
     } else if (ageRestrictShown) {
         return [ageRestrictArray count];
     } else if (moodShown) {
-        return [appDelegate.moodArray count];
+        return 0; //[appDelegate.moodArray count];
     } else if (postAsShown) {
         iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
         return [appDelegate.accountsArray count];
     } else if (postToShown) {
         iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
-        DWAccount *account = [appDelegate.accountsArray objectAtIndex:accountNum];
-        return [account.postToArray count];
+        //DWAccount *account = [appDelegate.accountsArray objectAtIndex:accountNum];
+        return 0; //[account.postToArray count];
     } else if (accessShown) {
         return [accessArray count];
     } else {
@@ -857,7 +857,7 @@
     [scrollView release];
     [submitButton release];
     
-    [post release];
+    //[post release];
     
     [self.navigationItem.rightBarButtonItem release];
     [self.navigationItem.leftBarButtonItem release];
