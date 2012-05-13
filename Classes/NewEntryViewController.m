@@ -30,7 +30,7 @@
 
 #import "NewEntryViewController.h"
 
-#import "iDreamwidthAppDelegate.h"
+#import "iDWAppDelegate.h"
 //#import "DWAccount.h"
 
 // Taken from Cocoa With Love 
@@ -117,7 +117,7 @@
  */
 
 - (IBAction)submit {
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     //DWAccount *account = (DWAccount *)[appDelegate.accountsArray objectAtIndex:accountNum];
     
     [self save:self];
@@ -125,7 +125,7 @@
 }
 
 - (void)clear {
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     //DWAccount *account = (DWAccount *)[appDelegate.accountsArray objectAtIndex:0];
     
     accountNum = 0;
@@ -168,7 +168,7 @@
 }
 
 - (void)save:(id)sender {
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     // Edit this
     /*if (self.post.draftNum == -1) {
@@ -311,7 +311,7 @@
     accountNum = 0;
     postToNum = 0;
     accessSel = NO;
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     //DWAccount *account = (DWAccount *)[appDelegate.accountsArray objectAtIndex:accountNum];
     
     //self.postAsText.text = account.username;
@@ -679,7 +679,7 @@
 }
 
 - (void) dismissPicker:(id)sender {
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     if (commentsShown) {
         // [commentsText resignFirstResponder];
         [actionSheet dismissWithClickedButtonIndex:-1 animated:YES];
@@ -719,7 +719,7 @@
         accountNum = n;
         postAsShown = NO;
     } else if (postToShown) {
-        iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+        iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
         
         [actionSheet dismissWithClickedButtonIndex:-1 animated:YES];
         NSInteger n = [postToPick selectedRowInComponent:0];
@@ -744,7 +744,7 @@
 }
 
 -(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     if (commentsShown) {
         return (NSString *)[commentsArray objectAtIndex:row];
     } else if (ageRestrictShown) {
@@ -754,11 +754,11 @@
     } else if (moodShown) {
         return @""; //(NSString *)[appDelegate.moodArray objectAtIndex:row];
     } else if (postToShown) {
-        iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+        iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
         //DWAccount *account = [appDelegate.accountsArray objectAtIndex:accountNum];
         return @"";//(NSString *)[account.postToArray objectAtIndex:row];
     } else if (postAsShown) {
-        iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+        iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
         return @""; //(NSString *)((DWAccount *)[appDelegate.accountsArray objectAtIndex:row]).username;
     } else if (accessShown) {
         return (NSString *)[accessArray objectAtIndex:row];
@@ -772,7 +772,7 @@
 }
 
 -(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     if (commentsShown) {
         return [commentsArray count];
     } else if (screenShown) {
@@ -782,10 +782,10 @@
     } else if (moodShown) {
         return 0; //[appDelegate.moodArray count];
     } else if (postAsShown) {
-        iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+        iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
         return [appDelegate.accountsArray count];
     } else if (postToShown) {
-        iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+        iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
         //DWAccount *account = [appDelegate.accountsArray objectAtIndex:accountNum];
         return 0; //[account.postToArray count];
     } else if (accessShown) {

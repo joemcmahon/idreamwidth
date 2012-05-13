@@ -42,7 +42,7 @@
 @class iDWButtonGrid;
 
 // App delegate for iDreamwidth
-@interface iDreamwidthAppDelegate : NSObject <UIApplicationDelegate, UIAlertViewDelegate> {
+@interface iDWAppDelegate : NSObject <UIApplicationDelegate, UIAlertViewDelegate> {
     UIWindow *window;
     UINavigationController *navigationController;
     NewEntryViewController *createEntryController;

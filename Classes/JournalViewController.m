@@ -31,7 +31,7 @@
 #import "JournalViewController.h"
 
 #import "EntryCell.h"
-#import "iDreamwidthAppDelegate.h"
+#import "iDWAppDelegate.h"
 //#import "DWPost.h"
 
 @implementation JournalViewController
@@ -107,7 +107,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     return [appDelegate.journalArray count];
 }
@@ -130,7 +130,7 @@
     }
     
     // Set up the cell...
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     //DWPost *post = [appDelegate.journalArray objectAtIndex:indexPath.row];
     
     //cell.title.text = post.subject;
@@ -153,7 +153,7 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {    
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     /*DWPost *post = [appDelegate.journalArray objectAtIndex:indexPath.row];
     NewEntryViewController *entryControl = appDelegate.createEntryController;
     

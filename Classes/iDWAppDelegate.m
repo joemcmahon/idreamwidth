@@ -29,7 +29,7 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-#import "iDreamwidthAppDelegate.h"
+#import "iDWAppDelegate.h"
 #import "DWClient.h"
 #import "Configuration.h"
 
@@ -38,7 +38,7 @@
 
 @class DWPendingAuthorization;
 
-@implementation iDreamwidthAppDelegate
+@implementation iDWAppDelegate
 
 @synthesize window;
 @synthesize navigationController;

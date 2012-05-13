@@ -30,7 +30,7 @@
 
 #import "AccountsEditController.h"
 
-#import "iDreamwidthAppDelegate.h"
+#import "iDWAppDelegate.h"
 //#import "DWAccount.h"
 
 
@@ -91,7 +91,7 @@ __VA_ARGS__ \
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
-        iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+        iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
 
         newSave = YES;
         saveButton.hidden = YES;
@@ -122,7 +122,7 @@ __VA_ARGS__ \
 */
 
 - (void)save:(id)sender {
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     /*if (newSave) {
         DWAccount *newAccount = [[DWAccount alloc] initWithUsername:username.text 
@@ -157,7 +157,7 @@ __VA_ARGS__ \
 }
 
 - (IBAction)deleteAccount {
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     [appDelegate.accountsArray removeObjectAtIndex:accountNum];
         

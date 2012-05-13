@@ -31,7 +31,7 @@
 #import "AccountsViewController.h"
 
 //#import "DWAccount.h"
-#import "iDreamwidthAppDelegate.h"
+#import "iDWAppDelegate.h"
 #import "AccountsCell.h"
 #import "AccountsEditController.h"
 
@@ -59,7 +59,7 @@
 }
 
 - (void)addAccount:(id)sender {
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     if (editor == nil) {
         AccountsEditController *editController = [[AccountsEditController alloc] initWithNibName:@"AccountsEditController" bundle:nil];
@@ -126,7 +126,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     return [appDelegate.accountsArray count];
 }
@@ -149,7 +149,7 @@
     }
     
     // Set up the cell...
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     //DWAccount *acct = [appDelegate.accountsArray objectAtIndex:indexPath.row];
     
     //cell.accountName.text = acct.username;
@@ -170,7 +170,7 @@
     // AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
     // [self.navigationController pushViewController:anotherViewController];
     // [anotherViewController release];
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     //DWAccount *acct = [appDelegate.accountsArray objectAtIndex:indexPath.row];
     
     if (editor == nil) {
@@ -198,7 +198,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView beginUpdates];
     
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate.accountsArray removeObjectAtIndex:indexPath.row];
     [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     

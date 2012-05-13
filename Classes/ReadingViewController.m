@@ -31,7 +31,7 @@
 #import "ReadingViewController.h"
 
 #import "EntryCell.h"
-#import "iDreamwidthAppDelegate.h"
+#import "iDWAppDelegate.h"
 #import "LightPostViewController.h"
 //#import "DWPost.h"
 
@@ -60,7 +60,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
 
     [appDelegate updateReading:self];
 }
@@ -111,7 +111,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
 
     return [appDelegate.readingArray count];
 }
@@ -134,7 +134,7 @@
     }
     
     // Set up the cell...
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     /*DWPost *post = [appDelegate.readingArray objectAtIndex:indexPath.row];
     
     cell.title.text = post.subject;

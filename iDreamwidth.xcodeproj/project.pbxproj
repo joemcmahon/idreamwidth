@@ -21,7 +21,7 @@
 		11D7639111EE5F0E007451F9 /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D7638F11EE5F0E007451F9 /* ReadingViewController.m */; };
 		11D7639611EE5F2E007451F9 /* JournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D7639411EE5F2E007451F9 /* JournalViewController.m */; };
 		11D7639D11EE5F5B007451F9 /* DraftsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D7639B11EE5F5B007451F9 /* DraftsViewController.m */; };
-		1D3623260D0F684500981E51 /* iDreamwidthAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iDreamwidthAppDelegate.m */; };
+		1D3623260D0F684500981E51 /* iDWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iDWAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -121,8 +121,8 @@
 		11D7639A11EE5F5B007451F9 /* DraftsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraftsViewController.h; sourceTree = "<group>"; };
 		11D7639B11EE5F5B007451F9 /* DraftsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraftsViewController.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* iDreamwidthAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iDreamwidthAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* iDreamwidthAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iDreamwidthAppDelegate.m; sourceTree = "<group>"; };
+		1D3623240D0F684500981E51 /* iDWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iDWAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* iDWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iDWAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* iDreamwidth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDreamwidth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -201,8 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				11D7616A11ED3EDD007451F9 /* View Controllers */,
-				1D3623240D0F684500981E51 /* iDreamwidthAppDelegate.h */,
-				1D3623250D0F684500981E51 /* iDreamwidthAppDelegate.m */,
+				1D3623240D0F684500981E51 /* iDWAppDelegate.h */,
+				1D3623250D0F684500981E51 /* iDWAppDelegate.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -531,7 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* iDreamwidthAppDelegate.m in Sources */,
+				1D3623260D0F684500981E51 /* iDWAppDelegate.m in Sources */,
 				11D762F711ED614C007451F9 /* NewEntryViewController.m in Sources */,
 				11D7632F11ED6480007451F9 /* SettingsViewController.m in Sources */,
 				11D7638C11EE5EF4007451F9 /* AccountsViewController.m in Sources */,

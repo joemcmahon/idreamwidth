@@ -31,7 +31,7 @@
 #import "DraftsViewController.h"
 
 #import "EntryCell.h"
-#import "iDreamwidthAppDelegate.h"
+#import "iDWAppDelegate.h"
 //#import "DWPost.h"
 
 @implementation DraftsViewController
@@ -106,7 +106,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     return [appDelegate.draftsArray count];
 }
@@ -129,7 +129,7 @@
     }
     
     // Set up the cell...
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     /*DWPost *post = [appDelegate.draftsArray objectAtIndex:indexPath.row];
     
     cell.title.text = post.subject;
@@ -156,7 +156,7 @@
     // [self.navigationController pushViewController:anotherViewController];
     // [anotherViewController release];
     
-    iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+    iDWAppDelegate *appDelegate = (iDWAppDelegate *)[[UIApplication sharedApplication] delegate];
     /*DWPost *post = [appDelegate.draftsArray objectAtIndex:indexPath.row];
     NewEntryViewController *entryControl = appDelegate.createEntryController;
     
