@@ -3,6 +3,7 @@
 //  iDreamwidth
 //
 //  Copyright (c) 2010, Xerxes Botkin
+//  Copyright (c) 2013, Joe McMahon
 //  All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -247,7 +248,6 @@ __VA_ARGS__ \
     (
      CGRect kbEndFrame;
      [[notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue:&kbEndFrame];
-     CGFloat kbHeight;
      if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait || 
          [[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown) {
          kbHeight = kbEndFrame.size.height;

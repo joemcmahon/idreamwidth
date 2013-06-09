@@ -3,6 +3,7 @@
 //  iDreamwidth
 //
 //  Copyright (c) 2010, Xerxes Botkin
+//  Copyright (c) 2013, Joe McMahon
 //  All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -45,10 +46,20 @@
         [networkQueue go];
         queue = [[Queue alloc] init];
         dwFlatURL = [[NSURL alloc] initWithString:@"http://www.dreamwidth.org/interface/flat"];
-        monthNumDict = [[NSDictionary alloc] initWithObjectsAndKeys:@"01",@"Jan",@"02",@"Feb",
-                        @"03",@"Mar",@"04",@"Apr",@"05",@"May",@"06",@"Jun",
-                        @"07",@"Jul",@"08",@"Aug",@"09",@"Sep",@"10",@"Oct",
-                        @"11", @"Nov",@"12", @"Dec",nil];
+        monthNumDict = [[NSDictionary alloc] initWithObjectsAndKeys:
+                        @"01", @"Jan",
+                        @"02", @"Feb",
+                        @"03", @"Mar",
+                        @"04", @"Apr",
+                        @"05", @"May",
+                        @"06", @"Jun",
+                        @"07", @"Jul",
+                        @"08", @"Aug",
+                        @"09", @"Sep",
+                        @"10", @"Oct",
+                        @"11", @"Nov",
+                        @"12", @"Dec",
+                        nil];
         userPicsDL = [[NSMutableDictionary alloc] init];
     }
     return self;
@@ -67,7 +78,8 @@
     const char *cString = [str UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];
     CC_MD5(cString, strlen(cString), result);
-    NSString *md5 = [NSString stringWithFormat:@"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
+    NSString *md5 = [NSString
+            stringWithFormat:@"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
                      result[0], result[1], result[2], result[3],
                      result[4], result[5], result[6], result[7],
                      result[8], result[9], result[10], result[11],
@@ -80,7 +92,7 @@
     NSMutableArray *keys = [[NSMutableArray alloc] init];
     NSMutableArray *values = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i < [results count] - 1; i++) {
+    for (unsigned int i = 0; i < [results count] - 1; i++) {
         if (i % 2 == 0) {
             [keys addObject:[results objectAtIndex:i]];
         } else {
@@ -120,16 +132,24 @@
 
 - (NSString *)reformatEntry:(NSString *)entry {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    NSString *entrySpace = [entry stringByReplacingOccurrencesOfString:@"+" withString:@" "];
-    NSString *entryUnicode = [entrySpace stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *entryBreak = [entryUnicode stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
-    NSString *entryQuote = [entryBreak stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
-    NSString *entryApos = [entryQuote stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
-    NSString *entryLess = [entryApos stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
-    NSString *entryGreat = [entryLess stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
+    NSString *entrySpace   = [entry
+                              stringByReplacingOccurrencesOfString:@"+" withString:@" "];
+    NSString *entryUnicode = [entrySpace
+                              stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *entryBreak   = [entryUnicode
+                              stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
+    NSString *entryQuote   = [entryBreak
+                              stringByReplacingOccurrencesOfString:@"&quot;" withString:@"\""];
+    NSString *entryApos    = [entryQuote
+                              stringByReplacingOccurrencesOfString:@"&apos;" withString:@"'"];
+    NSString *entryLess    = [entryApos
+                              stringByReplacingOccurrencesOfString:@"&lt;" withString:@"<"];
+    NSString *entryGreat   = [entryLess
+                              stringByReplacingOccurrencesOfString:@"&gt;" withString:@">"];
     [entryGreat retain];
     [pool release];
-    NSString *entryAmp = [entryGreat stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+    NSString *entryAmp = [entryGreat
+                          stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
     [entryGreat release];
     return entryAmp;
 }
@@ -645,18 +665,18 @@
 - (void)getEvents:(DWAccount *)dwAcct {
     ASIFormDataRequest *req = [ASIFormDataRequest requestWithURL:dwFlatURL];
     [req setPostValue:@"getevents" forKey:@"mode"];
-    // [req setPostValue:@"10" forKey:@"truncate"];
-    [req setPostValue:@"0" forKey:@"prefersubject"];
-    [req setPostValue:@"0" forKey:@"noprops"];
-    [req setPostValue:@"lastn" forKey:@"selecttype"];
-    [req setPostValue:@"" forKey:@"lastsync"];
-    [req setPostValue:@"" forKey:@"year"];
-    [req setPostValue:@"" forKey:@"month"];
-    [req setPostValue:@"" forKey:@"day"];
-    [req setPostValue:@"25" forKey:@"howmany"];
-    [req setPostValue:@"-1" forKey:@"itemid"];
-    [req setPostValue:@"unix" forKey:@"lineendings"];
-    // [req setPostValue:@"" forKey:@"usejournal"];
+    // [req setPostValue:@"10"  forKey:@"truncate"];
+    [req setPostValue:@"0"      forKey:@"prefersubject"];
+    [req setPostValue:@"0"      forKey:@"noprops"];
+    [req setPostValue:@"lastn"  forKey:@"selecttype"];
+    [req setPostValue:@""       forKey:@"lastsync"];
+    [req setPostValue:@""       forKey:@"year"];
+    [req setPostValue:@""       forKey:@"month"];
+    [req setPostValue:@""       forKey:@"day"];
+    [req setPostValue:@"25"     forKey:@"howmany"];
+    [req setPostValue:@"-1"     forKey:@"itemid"];
+    [req setPostValue:@"unix"   forKey:@"lineendings"];
+    // [req setPostValue:@""    forKey:@"usejournal"];
     
     // TODO
     req.dwAccount = dwAcct;
@@ -1303,7 +1323,7 @@
         NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookDict];
         
         NSURL *url = [NSURL URLWithString:@"http://i-xerxes.dreamwidth.org/read?format=light"];
-        ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+        request = [ASIHTTPRequest requestWithURL:url];
         [ASIHTTPRequest addSessionCookie:cookie];
         [request setDelegate:self];
         [request startSynchronous];
@@ -1533,10 +1553,10 @@
     
     NSArray *posts = [response componentsSeparatedByString:@"<item>"];
     [response release];
-    int numOfPosts = [posts count];
+    int numOfPosts = (int)[posts count];
     
     if (numOfPosts > 1) {
-        for (int i = 1; i < [posts count]; i++) {
+        for (int i = 1; i < numOfPosts; i++) {
             NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
             
             DWPost *newPost = [[DWPost alloc] init];

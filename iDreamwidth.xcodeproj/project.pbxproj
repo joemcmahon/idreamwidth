@@ -29,7 +29,6 @@
 		1156CDC111CAB87200CE489A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1156CDC011CAB87200CE489A /* CFNetwork.framework */; };
 		1156CDC311CAB88000CE489A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1156CDC211CAB88000CE489A /* SystemConfiguration.framework */; };
 		1156CDC511CAB88800CE489A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1156CDC411CAB88800CE489A /* MobileCoreServices.framework */; };
-		1156CDC711CAB89500CE489A /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1156CDC611CAB89500CE489A /* libz.1.2.3.dylib */; };
 		11D762F711ED614C007451F9 /* NewEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D762F511ED614C007451F9 /* NewEntryViewController.m */; };
 		11D762F811ED614C007451F9 /* NewEntryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D762F611ED614C007451F9 /* NewEntryViewController.xib */; };
 		11D7632011ED6273007451F9 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D7631F11ED6273007451F9 /* MainWindow.xib */; };
@@ -50,6 +49,12 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		7105BD9417646AD800F0012D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7105BD9317646AD800F0012D /* libz.dylib */; };
+		7105BD9D17646CEB00F0012D /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7105BD9717646CEB00F0012D /* Icon-Small.png */; };
+		7105BDA217646D0A00F0012D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7105BDA117646D0A00F0012D /* Icon.png */; };
+		7105BDA417646D1D00F0012D /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7105BDA317646D1D00F0012D /* Icon@2x.png */; };
+		7105BDA617646D4500F0012D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7105BDA517646D4500F0012D /* Default@2x.png */; };
+		7105BDA817646D7800F0012D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7105BDA717646D7800F0012D /* Default-568h@2x.png */; };
 		94A8CD62155B310700B1595C /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8CD52155B310700B1595C /* ASIAuthenticationDialog.m */; };
 		94A8CD63155B310700B1595C /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8CD54155B310700B1595C /* ASIFormDataRequest.m */; };
 		94A8CD64155B310700B1595C /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 94A8CD56155B310700B1595C /* ASIHTTPRequest.m */; };
@@ -90,7 +95,6 @@
 		1156CDC011CAB87200CE489A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		1156CDC211CAB88000CE489A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1156CDC411CAB88800CE489A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		1156CDC611CAB89500CE489A /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		11D762F411ED614C007451F9 /* NewEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEntryViewController.h; sourceTree = "<group>"; };
 		11D762F511ED614C007451F9 /* NewEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEntryViewController.m; sourceTree = "<group>"; };
 		11D762F611ED614C007451F9 /* NewEntryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewEntryViewController.xib; path = Classes/NewEntryViewController.xib; sourceTree = "<group>"; };
@@ -122,6 +126,12 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* iDreamwidth_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iDreamwidth_Prefix.pch; sourceTree = "<group>"; };
+		7105BD9317646AD800F0012D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
+		7105BD9717646CEB00F0012D /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Images/Icon-Small.png"; sourceTree = "<group>"; };
+		7105BDA117646D0A00F0012D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		7105BDA317646D1D00F0012D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		7105BDA517646D4500F0012D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		7105BDA717646D7800F0012D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* iDreamwidth-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iDreamwidth-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		94A8CD51155B310700B1595C /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		94A8CD52155B310700B1595C /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
@@ -149,13 +159,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7105BD9417646AD800F0012D /* libz.dylib in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				1156CDC111CAB87200CE489A /* CFNetwork.framework in Frameworks */,
 				1156CDC311CAB88000CE489A /* SystemConfiguration.framework in Frameworks */,
 				1156CDC511CAB88800CE489A /* MobileCoreServices.framework in Frameworks */,
-				1156CDC711CAB89500CE489A /* libz.1.2.3.dylib in Frameworks */,
 				0B45BD9E1218A42100B42B2D /* Security.framework in Frameworks */,
 				0B45BDEE1218A44300B42B2D /* Security.framework in Frameworks */,
 			);
@@ -269,17 +279,26 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				7105BDA717646D7800F0012D /* Default-568h@2x.png */,
+				7105BDA517646D4500F0012D /* Default@2x.png */,
+				7105BDA317646D1D00F0012D /* Icon@2x.png */,
+				7105BDA117646D0A00F0012D /* Icon.png */,
+				7105BD9717646CEB00F0012D /* Icon-Small.png */,
 				94A8CD4F155B310700B1595C /* External Modules */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				1156CDC011CAB87200CE489A /* CFNetwork.framework */,
-				1156CDC611CAB89500CE489A /* libz.1.2.3.dylib */,
-				1156CDC411CAB88800CE489A /* MobileCoreServices.framework */,
 				0B45BD9D1218A42100B42B2D /* Security.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				0B45BDED1218A44300B42B2D /* Security.framework */,
+				1156CDC011CAB87200CE489A /* CFNetwork.framework */,
+				1156CDC411CAB88800CE489A /* MobileCoreServices.framework */,
 				1156CDC211CAB88000CE489A /* SystemConfiguration.framework */,
+				7105BD9317646AD800F0012D /* libz.dylib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -306,10 +325,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
-				1D30AB110D05D00D00671497 /* Foundation.framework */,
-				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
-				0B45BDED1218A44300B42B2D /* Security.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -423,6 +438,11 @@
 				0B57294D1216063000F5B331 /* AccountsEditController.xib in Resources */,
 				0B2830A21216DFDE00862920 /* delete_button.png in Resources */,
 				114155EC123A59A300860F51 /* LightPostViewController.xib in Resources */,
+				7105BD9D17646CEB00F0012D /* Icon-Small.png in Resources */,
+				7105BDA217646D0A00F0012D /* Icon.png in Resources */,
+				7105BDA417646D1D00F0012D /* Icon@2x.png in Resources */,
+				7105BDA617646D4500F0012D /* Default@2x.png in Resources */,
+				7105BDA817646D7800F0012D /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,7 +488,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexander Botkin (W8TXP9V7AK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -496,8 +516,12 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				INFOPLIST_FILE = "iDreamwidth-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = iDreamwidth;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos6.1;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
 				WARNING_LDFLAGS = "";
 			};
 			name = Debug;
@@ -506,7 +530,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexander Botkin (W8TXP9V7AK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -533,8 +557,13 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				INFOPLIST_FILE = "iDreamwidth-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = iDreamwidth;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos6.1;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
 				WARNING_LDFLAGS = "";
 			};
 			name = Release;

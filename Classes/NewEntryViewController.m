@@ -396,8 +396,7 @@
     (
         CGRect kbEndFrame;
         [[notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue:&kbEndFrame];
-        CGFloat kbHeight;
-        if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait || 
+        if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait ||
             [[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown) {
             kbHeight = kbEndFrame.size.height;
         } else {
@@ -719,7 +718,7 @@
         accountNum = n;
         postAsShown = NO;
     } else if (postToShown) {
-        iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+        appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
         
         [actionSheet dismissWithClickedButtonIndex:-1 animated:YES];
         NSInteger n = [postToPick selectedRowInComponent:0];
@@ -754,11 +753,11 @@
     } else if (moodShown) {
         return (NSString *)[appDelegate.moodArray objectAtIndex:row];
     } else if (postToShown) {
-        iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+        appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
         DWAccount *account = [appDelegate.accountsArray objectAtIndex:accountNum];
         return (NSString *)[account.postToArray objectAtIndex:row];
     } else if (postAsShown) {
-        iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+        appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
         return (NSString *)((DWAccount *)[appDelegate.accountsArray objectAtIndex:row]).username;
     } else if (accessShown) {
         return (NSString *)[accessArray objectAtIndex:row];
@@ -782,10 +781,10 @@
     } else if (moodShown) {
         return [appDelegate.moodArray count];
     } else if (postAsShown) {
-        iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+        appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
         return [appDelegate.accountsArray count];
     } else if (postToShown) {
-        iDreamwidthAppDelegate *appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
+        appDelegate = (iDreamwidthAppDelegate *)[[UIApplication sharedApplication] delegate];
         DWAccount *account = [appDelegate.accountsArray objectAtIndex:accountNum];
         return [account.postToArray count];
     } else if (accessShown) {

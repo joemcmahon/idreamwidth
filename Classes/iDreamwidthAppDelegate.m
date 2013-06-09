@@ -80,46 +80,73 @@
     self.accountsType = acctType;
     [acctType release];
     
-    NSArray *moodA = [[NSArray alloc] initWithObjects:@"None or Other", @"accomplished",
-                 @"aggravated",@"amused",@"angry",@"annoyed",@"anxious",@"apathetic",@"artistic",@"awake",
-                 @"bitchy",@"blah",@"blank",@"bored",@"bouncy",@"busy",@"calm",@"cheerful",@"chipper",
-                 @"cold",@"complacent",@"confused",@"contemplative",@"content",@"cranky",@"crappy",
-                 @"crazy",@"creative",@"crushed",@"curious",@"cynical",@"depressed",@"determined",@"devious",
-                 @"dirty",@"disappointed",@"discontent",@"distressed",@"ditzy",@"dorky",@"drained",
-                 @"drunk",@"ecstatic",@"embarressed",@"energetic",@"enraged",@"enthralled",@"envious",
-                 @"exanimate",@"excited",@"exhausted",@"flirty",@"frustrated",@"full",@"geeky",
-                 @"giddy",@"giggly",@"gloomy",@"good",@"grateful",@"groggy",@"grumpy",@"guilty",
-                 @"happy",@"high",@"hopeful",@"horny",@"hot",@"hungry",@"hyper",@"impressed",
-                 @"indescribable",@"indifferent",@"infuriated",@"intimidated",@"irate",@"irritated",
-                 @"jealous",@"jubilant",@"lazy",@"lethargic",@"listless",@"lonely",@"loved",@"melancholy",
-                 @"mellow",@"mischevious",@"moody",@"morose",@"naughty",@"nauseated",@"nerdy",
-                 @"nervous",@"nostalgic",@"numb",@"okay",@"optimistic",@"peaceful",@"pensive",
-                 @"pessimistic",@"pissed off",@"pleased",@"predatory",@"productive",@"quixotic",
-                 @"recumbent",@"refreshed",@"rejected",@"rejuvenated",@"relaxed",@"relieved",
-                 @"restless",@"rushed",@"sad",@"satisfied",@"scared",@"shocked",@"sick",@"silly",
-                 @"sleepy",@"sore",@"stressed",@"surprised",@"sympathetic",@"thankful",@"thirsty",
-                 @"thoughtful",@"tired",@"touched",@"uncomfortable",@"weird",@"working",@"worried", 
-                 nil];
+    NSArray *moodA = [[NSArray alloc] initWithObjects:
+                      @"None or Other",
+                      @"accomplished", @"aggravated", @"amused", @"angry", @"annoyed",  @"anxious", @"apathetic", @"artistic", @"awake",
+                      @"bitchy", @"blah", @"blank", @"bored", @"bouncy", @"busy",
+                      @"calm", @"cheerful", @"chipper", @"cold", @"complacent", @"confused", @"contemplative", @"content", @"cranky", @"crappy", @"crazy", @"creative", @"crushed", @"curious", @"cynical",
+                      @"depressed", @"determined", @"devious", @"dirty", @"disappointed", @"discontent", @"distressed", @"ditzy", @"dorky", @"drained", @"drunk",
+                      @"ecstatic", @"embarrassed", @"energetic", @"enraged", @"enthralled", @"envious", @"exanimate", @"excited", @"exhausted",
+                      @"flirty", @"frustrated", @"full",
+                      @"geeky", @"giddy", @"giggly", @"gloomy", @"good", @"grateful", @"groggy", @"grumpy", @"guilty",
+                      @"happy", @"high", @"hopeful", @"horny", @"hot", @"hungry", @"hyper",
+                      @"impressed", @"indescribable", @"indifferent", @"infuriated", @"intimidated", @"irate", @"irritated",
+                      @"jealous", @"jubilant",
+                      @"lazy", @"lethargic", @"listless", @"lonely", @"loved",
+                      @"melancholy", @"mellow", @"mischevious", @"moody", @"morose",
+                      @"naughty", @"nauseated", @"nerdy", @"nervous", @"nostalgic", @"numb",
+                      @"okay", @"optimistic",
+                      @"peaceful", @"pensive", @"pessimistic", @"pissed off", @"pleased", @"predatory", @"productive",
+                      @"quixotic",
+                      @"recumbent", @"refreshed", @"rejected", @"rejuvenated", @"relaxed", @"relieved", @"restless", @"rushed",
+                      @"sad", @"satisfied", @"scared", @"shocked", @"sick", @"silly", @"sleepy", @"sore", @"stressed", @"surprised", @"sympathetic",
+                      @"thankful", @"thirsty", @"thoughtful", @"tired", @"touched",
+                      @"uncomfortable",
+                      @"weird", @"working", @"worried",
+                      nil];
     self.moodArray = moodA;
     [moodA release];
     
-    NSArray *moodNumA = [[NSArray alloc] initWithObjects:@"0",
-                    @"90",@"1",@"44",@"2",@"3",@"4",@"114",@"108",@"87",@"110",@"92",@"113",@"5",
-                    @"59",@"91",@"68",@"125",@"99",@"84",@"63",@"6",@"101",@"64",@"8",@"7",@"106",
-                    @"107",@"129",@"56",@"104",@"9",@"45",@"130",@"119",@"55",@"10",@"127",@"35",
-                    @"115",@"40",@"34",@"98",@"79",@"11",@"12",@"13",@"80",@"78",@"41",@"14",@"67",
-                    @"47",@"93",@"103",@"120",@"72",@"38",@"126",@"132",@"51",@"95",@"111",@"15",
-                    @"16",@"43",@"17",@"83",@"18",@"52",@"116",@"48",@"65",@"19",@"128",@"20",
-                    @"112",@"133",@"21",@"33",@"75",@"76",@"22",@"86",@"39",@"57",@"36",@"23",
-                    @"37",@"117",@"97",@"102",@"134",@"60",@"124",@"61",@"70",@"58",@"73",@"71",
-                    @"24",@"109",@"118",@"89",@"105",@"77",@"69",@"123",@"62",@"53",@"42",@"54",
-                    @"100",@"25",@"26",@"46",@"122",@"82",@"66",@"49",@"27",@"28",@"121",@"81",
-                    @"131",@"29",@"30",@"31",@"32",@"74",@"96",@"88",@"85",nil];
+    NSArray *moodNumA = [[NSArray alloc] initWithObjects:
+                         @"0", @"90",
+                         @"1", @"44",
+                         @"2",
+                         @"3",
+                         @"4", @"114", @"108", @"87", @"110", @"92", @"113",
+                         @"5", @"59", @"91", @"68", @"125", @"99", @"84", @"63",
+                         @"6", @"101", @"64",
+                         @"8",
+                         @"7", @"106", @"107", @"129", @"56", @"104",
+                         @"9", @"45", @"130", @"119", @"55",
+                         @"10", @"127", @"35", @"115", @"40", @"34", @"98", @"79",
+                         @"11",
+                         @"12",
+                         @"13", @"80", @"78", @"41",
+                         @"14", @"67", @"47", @"93", @"103",@"120", @"72", @"38", @"126", @"132", @"51", @"95", @"111",
+                         @"15",
+                         @"16", @"43",
+                         @"17", @"83",
+                         @"18", @"52", @"116", @"48", @"65",
+                         @"19", @"128",
+                         @"20", @"112", @"133",
+                         @"21", @"33", @"75", @"76",
+                         @"22", @"86", @"39", @"57", @"36",
+                         @"23", @"37", @"117", @"97", @"102", @"134", @"60", @"124", @"61", @"70", @"58", @"73", @"71",
+                         @"24", @"109", @"118", @"89", @"105", @"77", @"69", @"123", @"62", @"53", @"42", @"54", @"100",
+                         @"25",
+                         @"26", @"46", @"122", @"82", @"66", @"49",
+                         @"27",
+                         @"28", @"121", @"81", @"131",
+                         @"29",
+                         @"30",
+                         @"31",
+                         @"32", @"74", @"96", @"88", @"85",
+                         nil];
     self.moodNumArray = moodNumA;
     [moodNumA release];
     
     NSMutableDictionary *moodDi = [[NSMutableDictionary alloc] initWithCapacity:[moodArray count]];
-    for (int i = 0; i < [moodNumA count]; i++) {
+    for (unsigned int i = 0; i < [moodNumA count]; i++) {
         NSString *currI = [[NSString alloc] initWithFormat:@"%i", i];
         [moodDi setObject:currI forKey:[moodNumArray objectAtIndex:i]];
         [currI release];
@@ -135,7 +162,7 @@
     
     [self loadData:self];
     
-    for (int i = 0; i < [accountsArray count]; i++) {
+    for (unsigned int i = 0; i < [accountsArray count]; i++) {
         DWAccount *currAccount = [accountsArray objectAtIndex:i];
         [dwProtocol login:currAccount];
         [dwProtocol getEvents:currAccount];
@@ -255,7 +282,7 @@
         [accountsController.tblView reloadData];
     }
     
-    for (int i = 0; i < [accountsArray count]; i++) {
+    for (unsigned int i = 0; i < [accountsArray count]; i++) {
         DWAccount *acct = [accountsArray objectAtIndex:i];
         acct.accountNum = i;
     }
